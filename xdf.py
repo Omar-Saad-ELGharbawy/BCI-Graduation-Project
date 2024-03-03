@@ -45,7 +45,7 @@ class Xdf:
         return self.__header
     
     def getChannelCount(self):
-       return self.__noOfChannels
+        return self.__noOfChannels
     
     def _channelsPosition(self):
         for channel in range(self.__noOfChannels):
@@ -82,10 +82,11 @@ class Xdf:
 #-----------------------------------------------------Testing---------------------------
 # Object of Xdf Class  
 file = Xdf('Data/sub-P001_ses-S001_task-Hady_run-001_eeg.xdf')
+# file = Xdf('E:\\BCI\\Muse\\Data\\Test\\sub-P001\\ses-S001\\eeg\\sub-P001_ses-S001_task-Default_run-001_eeg.xdf')
 # file = Xdf('Data/sub-P001_ses-S001_task-Default_run-001_eeg.xdf)
 
 #---------------------------------Class Testing-----------------------------------------
-# print(file.getChannelData('Fp1'))
+print(file.getChannelData('Fp1'))
 # print(file.getOriginalTimeStampsList())
 # print(file.getChannelNames())
 # print(file.getChannelCount())
