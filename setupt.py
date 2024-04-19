@@ -20,3 +20,10 @@ for i, task in enumerate(task_repeated, 1):
         print("Invalid input. Please press Enter or 'q' to quit.")
         continue
     print(f"Trial {i}: {task}.")
+    sub_name = "sherif"
+    session_num= 1
+    run = i
+    file_name = f"sub-{sub_name}_ses-{session_num}_task-{task}_run-{run}_eeg"
+    print(file_name)
+
+# file_name = f" {}_{}  "
