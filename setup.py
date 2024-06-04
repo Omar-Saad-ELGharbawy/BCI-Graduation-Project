@@ -1,4 +1,10 @@
 import random
+import subprocess
+import keyboard
+
+def on_paste(trial):
+    text = f"{trial}"
+    subprocess.run(['clip'], input=text.strip().encode(), check=True)
 
 tasks = ['Right Grasp', 'Right Release', 'Baseline']
 repetitions = 20
@@ -18,8 +24,11 @@ for i, task in enumerate(task_repeated, 1):
     elif user_input != '':
         print("Invalid input. Please press Enter or 'q' to quit.")
         continue
-    print(f"Baseline (1 sec) Trial {i}: {task}.")
+    # print(f"Baseline (1 sec) Trial {i}: {task}.")
     print(f"Trial {i}: {task}.")
+    subprocess.run(['clip'], input=task.strip().encode(), check=True)
+    keyboard.add_hotkey("ctrl+v", lambda: on_paste(i))
+    # keyboard.on_press_key("v", on_paste(i))
     sub_name = "sherif"
     session_num= 1
     run = i
