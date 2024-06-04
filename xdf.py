@@ -49,7 +49,8 @@ class Xdf:
     
     def _channelsPosition(self):
         for channel in range(self.__noOfChannels):
-            self.__channel_names.append(self.__data[0]['info']['desc'][0]['channels'][0]['channel'][channel]['label'][0])
+            # self.__channel_names.append(self.__data[0]['info']['desc'][0]['channels'][0]['channel'][channel]['label'][0])
+            self.__channel_names.append(self.__data[0]['info']['desc'][0]['channels'][0]['channel'][channel]['label'][0].split("\n")[0])
 
     def getChannelNames(self):
         return self.__channel_names
@@ -58,13 +59,13 @@ class Xdf:
         return self.__samplingRate
     
     def getChannelData(self, channelName):
-        channelName = channelName.upper()
+        # channelName = channelName.upper()
         return self.__df[channelName]
     
     def getDataFrame(self, timeStampFlag = True):
         if(timeStampFlag):
             self.__df.insert(0, 'time stamp', self.getCalibratedTimeStampsList())
-        return self.__df;
+        return self.__df
         
     def toCSV(self, fileName, timeStampFlag = True):
         self.getDataFrame(timeStampFlag)
@@ -81,12 +82,12 @@ class Xdf:
 
 #-----------------------------------------------------Testing---------------------------
 # Object of Xdf Class  
-file = Xdf('Data/sub-P001_ses-S001_task-Hady_run-001_eeg.xdf')
+# file = Xdf('Data/sub-P001_ses-S001_task-Hady_run-001_eeg.xdf')
 # file = Xdf('E:\\BCI\\Muse\\Data\\Test\\sub-P001\\ses-S001\\eeg\\sub-P001_ses-S001_task-Default_run-001_eeg.xdf')
 # file = Xdf('Data/sub-P001_ses-S001_task-Default_run-001_eeg.xdf)
 
 #---------------------------------Class Testing-----------------------------------------
-print(file.getChannelData('Fp1'))
+# print(file.getChannelData('Fp1'))
 # print(file.getOriginalTimeStampsList())
 # print(file.getChannelNames())
 # print(file.getChannelCount())

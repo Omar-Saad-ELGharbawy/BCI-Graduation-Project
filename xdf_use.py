@@ -1,6 +1,10 @@
 from xdf import *
 
-file = Xdf('E:\\BCI\\Muse\\Data\\Test\\sub-P001\\ses-S001\\eeg\\sub-P001_ses-S001_task-Default_run-001_eeg.xdf')
+# file = Xdf('BCI Data\sub-Anwar\ses-S001\eeg\sub-Anwar_ses-S001_task-Baseline_run-002_eeg.xdf')
+file = Xdf('magdy\sub-magdy\ses-S001\eeg\sub-magdy_ses-S001_task-Right Release_run-003_eeg.xdf')
 
 print(file.getSamplingRate())
-file.toCSV('testClass.csv', False)
+
+print(file.getOriginalTimeStampsList())
+
+file.toCSV('testClass.csv', True)
