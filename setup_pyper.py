@@ -3,13 +3,16 @@ import pyperclip
 import keyboard
 import time
 
+
 def on_paste(trial):
-    text = f"{trial-1+60}"
+    text = f"{trial-1}"
     time.sleep(0.5)
     pyperclip.copy(text.strip())
 
-tasks = ["Right Grasp", "Right Release", "Baseline"]
-repetitions = 5
+
+tasks = ["Right_Grasp", "Right_Release", "Baseline"]
+repetitions = 45
+
 
 # Generate a list with each name repeated 20 times
 task_repeated = [task for task in tasks for _ in range(repetitions)]
@@ -33,13 +36,13 @@ try:
             print("Invalid input. Please press Enter or 'q' to quit.")
             continue
         # print(f"Baseline (1 sec) Trial {i}: {task}.")
-        print(f"Trial {i+60}: {task}.")
+        print(f"Trial {i}: {task}.")
         try:
             print(task.strip())
             pyperclip.copy(task.strip())
         except Exception as e:
             print(f"Error copying to clipboard: {e}")
-        
+
         sub_name = "sherif"
         session_num = 1
         run = i
