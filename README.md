@@ -166,6 +166,7 @@ BCI-FES-Rehabilitation-System
 │  │  │  ├─ ESPnow.py
 │  │  │  ├─ message_formating.py
 │  │  │  ├─ NetworkSetup.py
+├─ Paper.pdf
 ├─ README.md
 ```
 ***
